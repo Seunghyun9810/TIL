@@ -1,0 +1,49 @@
+## 깃 주요 개념
+깃, 깃허브, 저장소, 커밋, 브랜치
+파일의 4가지 상태 (Untracked, Unmodified, Modified, Staged)
+
+## 시나리오 1 : 깃 기초 - 기본적인 깃 다루기 (로컬 + 원격저장소)
+BootCamp / workspace 작업 폴더 생성
+git bash here
+전역에 git config 설정 (누가 작업했는지 알려주기 위함)
+git init 선언
+파일 생성
+git status
+git add git.txt
+git commit -m “첫 번째 커밋”
+원격저장소에 레포 생성
+git remote add origin 주소
+git push
+원격저장소에 올라온 것 확인
+git clone 해서 내려받기 (노트북 환경 가정)
+
+## 시나리오 2 : 솔플 브랜치 활용 (로컬에서 머지)
+충돌 나지 않는 케이스 (crawler 브랜치 생성 → movie_crawler, news_crawler)
+새로운 폴더 생성 first_pjt
+git init, readme, .gitignore / initial commit
+git checkout -b crawler 브랜치 생성 (도식화 연습)
+git checkout -b movie_crawler 브랜치 생성 (도식화 연습)
+movie_crawler.py 생성
+git add, commit
+git checkout crawler(파일 상태 변경된 것 확인),
+git checkout -b news_cralwer
+news_crawler.py 생성
+git add, commit
+git checkout crawler
+git merge (movie_crawler, news_crawler)
+git branch -D movie_crawler, news_crawler
+충돌 나는 케이스
+앞에서 충돌이 나지 않은 이유와 충돌이 발생하는 원인에 대해서 전달
+crawler 브랜치에서 util.py 생성
+각각 브랜치에서 util.py 수정하고 merge 시도, 두 번째 브랜치 병합 시 충돌 발생
+충돌 상태 도식화해보기
+master/MERGING 상태로 변한 것 확인 (notepad에서 파일 상태 확인 HEAD, 브랜치명)
+파일 수정 후 commit
+
+## 시나리오 3 : 협업 브랜치 생성 (조편성)
+충돌 나지 않는 케이스
+기본적으로 브랜치명은 각자 다르게 설정 (작업단위에 따라 나뉨)
+PR 날리기
+충돌나는 케이스 PR 날린 후 병합하기
+공통파일 README나 gitignore 수정
+깃허브에서 resolve conflicts
