@@ -12,10 +12,10 @@ git status
 git add git.txt
 git commit -m “첫 번째 커밋”
 원격저장소에 레포 생성
-git remote add origin 주소
-git push
+git remote add origin {github repository url}
+git push {원격저장소} {로컬저장소}
 원격저장소에 올라온 것 확인
-git clone 해서 내려받기 (노트북 환경 가정)
+git clone {원격저장소} 해서 내려받기 (노트북 환경 가정)
 
 ## 시나리오 2 : 솔플 브랜치 활용 (로컬에서 머지)
 충돌 나지 않는 케이스 (crawler 브랜치 생성 → movie_crawler, news_crawler)
@@ -47,3 +47,19 @@ PR 날리기
 충돌나는 케이스 PR 날린 후 병합하기
 공통파일 README나 gitignore 수정
 깃허브에서 resolve conflicts
+
+## Commit Convention
+- 커밋 컨벤션은 개발 내용에 대한 이해와 추적을 쉽게 하기 위한 목적
+- Issue와 Merge Request를 넣어서 추적 가능
+- COMMIT_TYPE (예시)
+- feat : 새로운 기능 추가
+- fix : 버그 수정
+- docs : 문서 추가 및 수정
+- style : 코드 포맷팅, 세미콜론 누락, 오타 수정 등
+- test : 테스트 코드
+- refactor : 코드 리팩토링
+- chore : 빌드 업무 수정, 패키지 매니저 수정
+
+- COMMIT_SUMMARY (예시)
+- 영어로 작성 (or 한글로 작성)
+- 마침표를 붙이지 않음- 50자를 넘기지 않음
